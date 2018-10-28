@@ -67,6 +67,8 @@ sio_open(const char *str, unsigned int mode, int nbio)
 		return _sio_oss_open("rsnd/default", mode, nbio);
 #elif defined(USE_ALSA)
 		return _sio_alsa_open("rsnd/default", mode, nbio);
+#elif defined(USE_TINYALSA)
+		return _sio_tinyalsa_open("rsnd/default", mode, nbio);
 #else
 		return NULL;
 #endif
@@ -80,6 +82,8 @@ sio_open(const char *str, unsigned int mode, int nbio)
 		return _sio_oss_open(str, mode, nbio);
 #elif defined(USE_ALSA)
 		return _sio_alsa_open(str, mode, nbio);
+#elif defined(USE_TINYALSA)
+		return _sio_tinyalsa_open(str, mode, nbio);
 #else
 		return NULL;
 #endif
