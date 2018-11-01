@@ -702,7 +702,7 @@ sio_alsa_getcap(struct sio_hdl *sh, struct sio_cap *cap)
 		    &cap->enc[i].bits,
 		    &cap->enc[i].sig,
 		    &cap->enc[i].le);
-		cap->enc[i].bps = SIO_BPS(cap->enc[0].bits);
+		cap->enc[i].bps = SIO_BPS(cap->enc[i].bits);
 		cap->enc[i].msb = 1;
 	}
 	for (i = 0; i < CAP_NRATES; i++) {
